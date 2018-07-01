@@ -1,4 +1,7 @@
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 
 def generate_table(filename, out_file):

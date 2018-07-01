@@ -9,12 +9,11 @@ import six.moves.builtins as builtins
 from theano import Op, tensor, Variable, Apply
 from theano.tensor.signal.pool import PoolGrad, Pool
 
-from theano.sandbox.cuda import register_opt
+from theano.gpuarray.opt import register_opt
 from theano.gof import local_optimizer
-from theano.sandbox.cuda.basic_ops import HostFromGpu, gpu_contiguous,\
+from theano.gpuarray.basic_ops import HostFromGpu, gpu_contiguous,\
     host_from_gpu
-from theano.sandbox.cuda import dnn_available
-from theano.sandbox.cuda.dnn import GpuDnnPoolGrad, dnn_pool
+from theano.gpuarray.dnn import dnn_available, GpuDnnPoolGrad, dnn_pool
 
 
 def patch_lasagne():

@@ -1,5 +1,9 @@
 import os
-import cPickle as pickle
+
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 from utils.visualization.lwsvm import plot as plot_svm
 from utils.visualization.sgd import plot as plot_sgd

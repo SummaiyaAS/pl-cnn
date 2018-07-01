@@ -7,7 +7,10 @@ from config import Configuration as Cfg
 
 import os
 import numpy as np
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 
 class CIFAR_10_DataLoader(DataLoader):

@@ -23,7 +23,7 @@ def main():
 
     # computation device
     if 'gpu' in args.device:
-        theano.sandbox.cuda.use(args.device)
+        theano.gpuarray.use(args.device)
 
     results_name = "{}/results.p".format(args.xp_dir)
     table_name = "{}/table.tex".format(args.xp_dir)

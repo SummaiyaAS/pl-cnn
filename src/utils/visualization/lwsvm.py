@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 
 def plot(filename, export_pdf, show):

@@ -7,6 +7,8 @@ import theano
 from neuralnet import NeuralNet
 from config import Configuration as Cfg
 
+from future.utils import iteritems
+
 # ====================================================================
 # Parse arguments
 # --------------------------------------------------------------------
@@ -59,7 +61,7 @@ def main():
 
     args = parser.parse_args()
     print('Options:')
-    for (key, value) in vars(args).iteritems():
+    for (key, value) in iteritems(vars(args)):
         print("{:12}: {}".format(key, value))
 
     assert os.path.exists(args.xp_dir)
@@ -78,7 +80,7 @@ def main():
 
     # computation device
     if 'gpu' in args.device:
-        theano.sandbox.cuda.use(args.device)
+        theano.gpuarray.use(args.device)
 
     np.random.seed(args.seed)
 

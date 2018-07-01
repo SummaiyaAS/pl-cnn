@@ -1,6 +1,9 @@
 import numpy as np
 import os
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 
 filename = "./experiments/paper/cifar10/svm/C_1e3_newcriterion.p"

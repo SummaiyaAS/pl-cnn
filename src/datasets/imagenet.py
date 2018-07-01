@@ -7,7 +7,10 @@ from utils.misc import flush_last_line
 from config import Configuration as Cfg
 
 import numpy as np
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 import time
 import os
 import fnmatch

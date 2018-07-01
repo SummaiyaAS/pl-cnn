@@ -1,4 +1,4 @@
-from iterator import indices_generator
+from .iterator import indices_generator
 from config import Configuration as Cfg
 
 

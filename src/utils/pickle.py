@@ -1,4 +1,7 @@
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 
 def dump_weights(nnet, filename=None):

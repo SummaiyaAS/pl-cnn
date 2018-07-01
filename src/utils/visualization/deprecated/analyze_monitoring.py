@@ -1,6 +1,9 @@
 import numpy as np
 import os
-import cPickle as pickle
+try:
+    import cPickle as pickle # Python2
+except ModuleNotFoundError:
+    import pickle # Python3
 
 log_dir = "./experiments/log/"
 filename = log_dir + "02-11-2016--11-36-17-0.p" #bestsofar
