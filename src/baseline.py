@@ -80,8 +80,11 @@ def main():
 
     # computation device
     if 'gpu' in args.device:
-        theano.gpuarray.use(args.device)
-
+        try: # Theano-1.0.2
+            theano.gpuarray.use(args.device)
+        except: # Theano-0.8.2
+            theano.sandbox.cuda.use(args.device)
+    
     np.random.seed(args.seed)
 
     # set save_at to n_epochs if not provided
